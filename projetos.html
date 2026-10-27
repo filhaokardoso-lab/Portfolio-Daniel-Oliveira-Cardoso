@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=20260914-1">
+    <link rel="stylesheet" href="styles.css?v=20261027-3">
 </head>
 
 <body>
@@ -30,66 +30,33 @@
         </header>
 
         <section class="project-list" aria-label="Lista de projetos e estudos">
-            <article class="project-item reveal">
+            <article id="escola-tucas" class="project-item reveal" aria-labelledby="tucas-titulo">
                 <div class="project-item-header">
                     <span class="project-item-meta"><span class="project-item-eyebrow">01</span> · Site institucional</span>
                     <span class="project-item-meta">2025</span>
                 </div>
-                <h2>Escola Tucas</h2>
-                <p>Website institucional com foco em clareza, narrativa e conversão para novos alunos, com apresentação da escola, modalidades, notícias e eventos.</p>
-                <div class="project-item-stack">
-                    <span>HTML</span>
-                    <span>CSS</span>
-                    <span>JavaScript</span>
-                    <span>UI</span>
+                <h2 id="tucas-titulo">Escola Tucas</h2>
+                <p>Site institucional desenvolvido individualmente no meu segundo trabalho como programador freelancer, reunindo a apresentação da escola, modalidades, notícias e eventos.</p>
+                <p>Uma experiência de evolução técnica e aprendizado no contato direto com o cliente.</p>
+                <div class="project-item-stack" aria-label="Tecnologias utilizadas">
+                    <span>HTML</span><span>CSS</span><span>JavaScript</span><span>UI</span>
                 </div>
-                <a href="https://etucas.com.br/" target="_blank" rel="noopener noreferrer">Visitar ↗</a>
+                <p id="tucas-creditos" class="project-note">Os créditos de desenvolvimento no site publicado estão desatualizados. Projeto desenvolvido por Daniel Oliveira.</p>
+                <a href="https://etucas.com.br/" target="_blank" rel="noopener noreferrer" aria-describedby="tucas-creditos">Visitar site <span aria-hidden="true">↗</span><span class="sr-only"> (abre em nova aba)</span></a>
             </article>
 
-            <article class="project-item reveal">
+            <article id="portfolio" class="project-item reveal" aria-labelledby="portfolio-titulo">
                 <div class="project-item-header">
                     <span class="project-item-meta"><span class="project-item-eyebrow">02</span> · Estudo</span>
-                    <span class="project-item-meta">2025</span>
+                    <span class="project-item-meta">Em evolução</span>
                 </div>
-                <h2>Portfolio pessoal</h2>
+                <h2 id="portfolio-titulo">Portfólio pessoal</h2>
                 <p>Refinamento de identidade visual, tipografia editorial e navegação minimalista para um portfólio de apresentação profissional.</p>
-                <div class="project-item-stack">
-                    <span>Design</span>
-                    <span>UI/UX</span>
-                    <span>Front-end</span>
+                <div class="project-item-stack" aria-label="Áreas do projeto">
+                    <span>Design</span><span>UI/UX</span><span>Front-end</span>
                 </div>
-                <a href="index.html">Abrir página ↗</a>
+                <a href="index.html">Abrir página <span aria-hidden="true">↗</span></a>
             </article>
-<!-- 
-            <article class="project-item reveal">
-                <div class="project-item-header">
-                    <span class="project-item-meta"><span class="project-item-eyebrow">03</span> · Exercício</span>
-                    <span class="project-item-meta">2024</span>
-                </div>
-                <h2>Landing pages</h2>
-                <p>Exploração de layouts orientados a conversão, com foco em hierarquia visual, atenção ao detalhe e clareza de informação.</p>
-                <div class="project-item-stack">
-                    <span>CSS</span>
-                    <span>Layout</span>
-                    <span>Responsivo</span>
-                </div>
-                <a href="index.html#trabalho">Ver destaque ↗</a>
-            </article>
-
-            <article class="project-item reveal">
-                <div class="project-item-header">
-                    <span class="project-item-meta"><span class="project-item-eyebrow">04</span> · Estudo</span>
-                    <span class="project-item-meta">2024</span>
-                </div>
-                <h2>Arquitetura solta</h2>
-                <p>Prática de organização, padronização e estrutura de código com foco em manutenção e clareza para projetos modernos.</p>
-                <div class="project-item-stack">
-                    <span>Estrutura</span>
-                    <span>Organização</span>
-                    <span>Clean code</span>
-                </div>
-                <a href="index.html#sobre">Sobre mim ↗</a>
-            </article> -->
         </section>
     </main>
 
@@ -99,7 +66,7 @@
         <a href="index.html#topo">Voltar ao topo ↑</a>
     </footer>
 
-    <script src="scripts.js"></script>
+    <script src="scripts.js?v=20261020-1"></script>
 </body>
 
 </html>

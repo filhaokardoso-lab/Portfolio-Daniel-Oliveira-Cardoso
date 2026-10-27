@@ -1,24 +1,37 @@
 const revealItems = document.querySelectorAll('.reveal');
-const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+let reducedMotion = true;
 
-if (reducedMotion) {
-    revealItems.forEach((item) => item.classList.add('is-visible'));
-} else {
-    const revealObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach((entry) => {
-            if (!entry.isIntersecting) return;
-            entry.target.classList.add('is-visible');
-            observer.unobserve(entry.target);
-        });
-    }, { threshold: 0.15 });
+try {
+    if (typeof window.matchMedia === 'function') {
+        reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    }
+} catch {
+    // Keep the page static if motion preferences cannot be determined.
+}
 
-    revealItems.forEach((item) => revealObserver.observe(item));
+if (!reducedMotion && typeof window.IntersectionObserver === 'function') {
+    let revealObserver;
+
+    try {
+        revealObserver = new window.IntersectionObserver((entries, observer) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+            });
+        }, { threshold: 0.15 });
+
+        revealItems.forEach((item) => revealObserver.observe(item));
+    } catch {
+        if (revealObserver) revealObserver.disconnect();
+        // Reveal animations are optional; the base styles keep content visible.
+    }
 }
 
 const aboutSection = document.querySelector('.about-section');
 const aboutCube = document.querySelector('.cube');
 
-if (aboutSection && aboutCube && !reducedMotion) {
+if (aboutSection && aboutCube && !reducedMotion && typeof window.requestAnimationFrame === 'function') {
     let cubeScrollFrame;
 
     const rotateCubeWithScroll = () => {
